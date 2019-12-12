@@ -43,6 +43,7 @@ backup_wp_site(){
         mv files.tar.gz ${backup_dir}/${wp_site}/${dateformat}/
         # Clear old backups
         find ${backup_dir}/${wp_site} -mindepth 1 -maxdepth 1 -mtime +"$retention" -exec rm -rf "{}" ";" > /dev/null
+        echo "  - Done!"
     done<${sitelist}
 }
 
